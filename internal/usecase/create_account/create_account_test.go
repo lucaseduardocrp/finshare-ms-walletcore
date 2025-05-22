@@ -17,7 +17,7 @@ func (m *ClientGatewayMock) Get(id string) (*entity.Client, error) {
 	return args.Get(0).(*entity.Client), args.Error(1)
 }
 
-func (m *ClientGatewayMock) Save(client *entity.Client) error {
+func (m *ClientGatewayMock) Create(client *entity.Client) error {
 	args := m.Called(client)
 	return args.Error(0)
 }
@@ -26,12 +26,12 @@ type AccountGatewayMock struct {
 	mock.Mock
 }
 
-func (m *AccountGatewayMock) GetById(id string) (*entity.Account, error) {
+func (m *AccountGatewayMock) Get(id string) (*entity.Account, error) {
 	args := m.Called(id)
 	return args.Get(0).(*entity.Account), args.Error(1)
 }
 
-func (m *AccountGatewayMock) Save(account *entity.Account) error {
+func (m *AccountGatewayMock) Create(account *entity.Account) error {
 	args := m.Called(account)
 	return args.Error(0)
 }

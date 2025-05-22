@@ -17,7 +17,7 @@ func (m *ClientGatewayMock) Get(id string) (*entity.Client, error) {
 	return args.Get(0).(*entity.Client), args.Error(1)
 }
 
-func (m *ClientGatewayMock) Save(client *entity.Client) error {
+func (m *ClientGatewayMock) Create(client *entity.Client) error {
 	args := m.Called(client)
 	return args.Error(0)
 }
